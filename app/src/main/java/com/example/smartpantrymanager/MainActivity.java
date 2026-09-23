@@ -1,97 +1,62 @@
 package com.example.smartpantrymanager;
 
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
 
 
 public class MainActivity extends AppCompatActivity {
 
+    RecyclerView recyclerPantry;
+    ArrayList<String> pantryNames;
+    ArrayList<String> pantryQuantities;
+    PantryAdapter pantryAdapter;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        TheDatabase theDatabase = new TheDatabase(this);
 
 
-        // Check whether the pantry already contains an item
-        Cursor existingItems = theDatabase.retrievePantryItem();
+        recyclerPantry = findViewById(
+                R.id.recyclerPantry
+        );
 
-        if (!existingItems.moveToFirst()) {
-
-            long result = theDatabase.insertPantryItem(
-                    "Tomatoes",
-                    5,
-                    "pieces",
-                    null
-            );
-
-            Log.d(
-                    "PANTRY_TEST",
-                    "Tomatoes inserted. ID: " + result
-            );
-
-        } else {
-
-            Log.d(
-                    "PANTRY_TEST",
-                    "Pantry item already exists."
-            );
-        }
-
-        existingItems.close();
+        recyclerPantry.setLayoutManager(
+                new LinearLayoutManager(this)
+        );
 
 
-        // Retrieve pantry items
-        Cursor cursor = theDatabase.retrievePantryItem();
 
-        if (cursor.moveToFirst()) {
+        // ADDITIONAL TEST DATA.
+        pantryNames = new ArrayList<>();
 
-            do {
+        pantryNames.add("Tomatoes");
+        pantryNames.add("Eggs");
+        pantryNames.add("Milk");
 
-                String name = cursor.getString(
-                        cursor.getColumnIndexOrThrow(
-                                TheDatabase.PANTRY_NAME
-                        )
-                );
+        pantryQuantities = new ArrayList<>();
 
-                double quantity = cursor.getDouble(
-                        cursor.getColumnIndexOrThrow(
-                                TheDatabase.PANTRY_QUANTITY
-                        )
-                );
+        pantryQuantities.add("5 pieces");
+        pantryQuantities.add("6 pieces");
+        pantryQuantities.add("2 litres");
 
-                String unit = cursor.getString(
-                        cursor.getColumnIndexOrThrow(
-                                TheDatabase.PANTRY_UNIT
-                        )
-                );
 
-                Log.d(
-                        "PANTRY_TEST",
-                        "Pantry item: " +
-                                name +
-                                " | " +
-                                quantity +
-                                " | " +
-                                unit
-                );
 
-            } while (cursor.moveToNext());
+        pantryAdapter = new PantryAdapter(
+                pantryNames,
+                pantryQuantities
+        );
 
-        } else {
-
-            Log.d(
-                    "PANTRY_TEST",
-                    "No pantry items found."
-            );
-        }
-
-        cursor.close();
+        recyclerPantry.setAdapter(
+                pantryAdapter
+        );
     }
 }
