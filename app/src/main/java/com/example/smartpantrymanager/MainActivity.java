@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
         TheDatabase theDatabase = new TheDatabase(this);
 
+        
 
-        // Check whether the pantry already contains an item
+        // DOES PANTRY CONTAIN ITEM?
         Cursor existingItems = theDatabase.retrievePantryItem();
 
         if (!existingItems.moveToFirst()) {
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         existingItems.close();
 
 
-        // Retrieve pantry items
+        
+        // RETRIEVE ITEMS.
         Cursor cursor = theDatabase.retrievePantryItem();
 
         if (cursor.moveToFirst()) {
