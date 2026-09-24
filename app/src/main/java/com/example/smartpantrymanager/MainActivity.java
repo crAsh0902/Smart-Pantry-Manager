@@ -1,5 +1,7 @@
 package com.example.smartpantrymanager;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> pantryNames;
     ArrayList<String> pantryQuantities;
     PantryAdapter pantryAdapter;
+    TheDatabase theDatabase;
 
 
 
@@ -23,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
-
         recyclerPantry = findViewById(
                 R.id.recyclerPantry
         );
@@ -33,22 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 new LinearLayoutManager(this)
         );
 
+        theDatabase = new TheDatabase(this);
 
-
-        // ADDITIONAL TEST DATA.
         pantryNames = new ArrayList<>();
-
-        pantryNames.add("Tomatoes");
-        pantryNames.add("Eggs");
-        pantryNames.add("Milk");
-
         pantryQuantities = new ArrayList<>();
-
-        pantryQuantities.add("5 pieces");
-        pantryQuantities.add("6 pieces");
-        pantryQuantities.add("2 litres");
-
-
 
         pantryAdapter = new PantryAdapter(
                 pantryNames,
@@ -58,5 +47,75 @@ public class MainActivity extends AppCompatActivity {
         recyclerPantry.setAdapter(
                 pantryAdapter
         );
+
+
+
+        // ADD YOUR INGREDIENT.
+        findViewById(R.id.btnAddIngredient)
+                .setOnClickListener(v -> {
+
+                    Intent intent = new Intent(
+                            MainActivity.this,
+                            AddEditActivity.class
+                    );
+
+                    startActivity(intent);
+                });
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        loadPantryItems();
+    }
+
+    private void loadPantryItems() {
+
+        pantryNames.clear();
+        pantryQuantities.clear();
+
+        Cursor cursor =
+                theDatabase.retrievePantryItem();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                String name =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        TheDatabase.PANTRY_NAME
+                                )
+                        );
+
+                double quantity =
+                        cursor.getDouble(
+                                cursor.getColumnIndexOrThrow(
+                                        TheDatabase.PANTRY_QUANTITY
+                                )
+                        );
+
+                String unit =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        TheDatabase.PANTRY_UNIT
+                                )
+                        );
+
+                pantryNames.add(name);
+
+                pantryQuantities.add(
+                        quantity + " " + unit
+                );
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        pantryAdapter.notifyDataSetChanged();
     }
 }
