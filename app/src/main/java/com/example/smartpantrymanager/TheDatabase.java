@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 
-
-
 public class TheDatabase extends SQLiteOpenHelper {
 
     // SmartPantry Database INFO.
@@ -36,7 +34,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // Recipe Ingredient TABLE.
+    // RecipeIngredient TABLE.
     public static final String TABLE_RECIPE_INGREDIENT = "recipeIng";
     public static final String RECIPE_INGREDIENT_ID = "ID";
     public static final String RECIPE_INGREDIENT_RECIPE_ID = "recipeID";
@@ -52,8 +50,6 @@ public class TheDatabase extends SQLiteOpenHelper {
     public TheDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
-
 
 
 
@@ -114,8 +110,6 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-
-
     // PantryItem INSERTION.
     public long insertPantryItem(
             String name,
@@ -141,9 +135,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-
-
-    // PantryItem RETRIEVAL.
+    // PantryItem READ.
     public Cursor retrievePantryItem() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -156,6 +148,75 @@ public class TheDatabase extends SQLiteOpenHelper {
                 null,
                 null,
                 PANTRY_ID + " ASC"
+        );
+    }
+
+
+
+
+
+    // PantryItem UPDATE
+    public int updatePantryItem(
+            long id,
+            String name,
+            double quantity,
+            String unit,
+            String exDate) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(PANTRY_NAME, name);
+        values.put(PANTRY_QUANTITY, quantity);
+        values.put(PANTRY_UNIT, unit);
+        values.put(PANTRY_EXPIRY_DATE, exDate);
+
+        int result = db.update(
+                TABLE_PANTRY,
+                values,
+                PANTRY_ID + "=?",
+                new String[]{String.valueOf(id)}
+        );
+
+        db.close();
+
+        return result;
+    }
+
+
+
+    // PantryItem DELETE.
+    public int deletePantryItem(long id) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int result = db.delete(
+                TABLE_PANTRY,
+                PANTRY_ID + "=?",
+                new String[]{String.valueOf(id)}
+        );
+
+        db.close();
+
+        return result;
+    }
+
+
+
+    // PantryItem ID RETRIEVAL.
+    public Cursor getPantryItemById(long id) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        return db.query(
+                TABLE_PANTRY,
+                null,
+                PANTRY_ID + "=?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
         );
     }
 }

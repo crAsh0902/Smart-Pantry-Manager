@@ -3,6 +3,7 @@ package com.example.smartpantrymanager;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +14,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerPantry;
+    ArrayList<Long> pantryIds;
     ArrayList<String> pantryNames;
     ArrayList<String> pantryQuantities;
-    PantryAdapter pantryAdapter;
-    TheDatabase theDatabase;
+    com.example.smartpantrymanager.PantryAdapter pantryAdapter;
+    com.example.smartpantrymanager.TheDatabase theDatabase;
+
+
 
 
 
@@ -34,23 +38,29 @@ public class MainActivity extends AppCompatActivity {
                 new LinearLayoutManager(this)
         );
 
-        theDatabase = new TheDatabase(this);
+        theDatabase = new com.example.smartpantrymanager.TheDatabase(this);
 
+        pantryIds = new ArrayList<>();
         pantryNames = new ArrayList<>();
         pantryQuantities = new ArrayList<>();
 
-        pantryAdapter = new PantryAdapter(
+        pantryAdapter = new com.example.smartpantrymanager.PantryAdapter(
+                pantryIds,
                 pantryNames,
-                pantryQuantities
+                pantryQuantities,
+
+                // EDIT.
+                id -> openEditScreen(id),
+
+                // DELETE/
+                id -> confirmDelete(id)
         );
 
         recyclerPantry.setAdapter(
                 pantryAdapter
         );
 
-
-
-        // ADD YOUR INGREDIENT.
+        // ADD/
         findViewById(R.id.btnAddIngredient)
                 .setOnClickListener(v -> {
 
@@ -74,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadPantryItems() {
 
+        pantryIds.clear();
         pantryNames.clear();
         pantryQuantities.clear();
 
@@ -84,26 +95,35 @@ public class MainActivity extends AppCompatActivity {
 
             do {
 
+                long id =
+                        cursor.getLong(
+                                cursor.getColumnIndexOrThrow(
+                                        com.example.smartpantrymanager.TheDatabase.PANTRY_ID
+                                )
+                        );
+
                 String name =
                         cursor.getString(
                                 cursor.getColumnIndexOrThrow(
-                                        TheDatabase.PANTRY_NAME
+                                        com.example.smartpantrymanager.TheDatabase.PANTRY_NAME
                                 )
                         );
 
                 double quantity =
                         cursor.getDouble(
                                 cursor.getColumnIndexOrThrow(
-                                        TheDatabase.PANTRY_QUANTITY
+                                        com.example.smartpantrymanager.TheDatabase.PANTRY_QUANTITY
                                 )
                         );
 
                 String unit =
                         cursor.getString(
                                 cursor.getColumnIndexOrThrow(
-                                        TheDatabase.PANTRY_UNIT
+                                        com.example.smartpantrymanager.TheDatabase.PANTRY_UNIT
                                 )
                         );
+
+                pantryIds.add(id);
 
                 pantryNames.add(name);
 
@@ -117,5 +137,53 @@ public class MainActivity extends AppCompatActivity {
         cursor.close();
 
         pantryAdapter.notifyDataSetChanged();
+    }
+
+    private void openEditScreen(long id) {
+
+        Intent intent = new Intent(
+                MainActivity.this,
+                AddEditActivity.class
+        );
+
+        intent.putExtra(
+                "PANTRY_ID",
+                id
+        );
+
+        startActivity(intent);
+    }
+
+    private void confirmDelete(long id) {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Ingredient")
+                .setMessage(
+                        "Are you sure you want to delete this ingredient?"
+                )
+                .setPositiveButton(
+                        "DELETE",
+                        (dialog, which) -> {
+
+                            deleteIngredient(id);
+
+                        }
+                )
+                .setNegativeButton(
+                        "CANCEL",
+                        null
+                )
+                .show();
+    }
+
+    private void deleteIngredient(long id) {
+
+        int result =
+                theDatabase.deletePantryItem(id);
+
+        if (result > 0) {
+
+            loadPantryItems();
+        }
     }
 }

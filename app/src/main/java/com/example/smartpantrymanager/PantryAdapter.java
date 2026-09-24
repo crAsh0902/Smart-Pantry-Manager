@@ -3,6 +3,7 @@ package com.example.smartpantrymanager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,20 +11,43 @@ import java.util.ArrayList;
 
 
 
-public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryViewHolder> {
+public class PantryAdapter
+        extends RecyclerView.Adapter<PantryAdapter.PantryViewHolder> {
 
+    private ArrayList<Long> pantryIds;
     private ArrayList<String> pantryNames;
     private ArrayList<String> pantryQuantities;
+    private OnEditClickListener editClickListener;
+    private OnDeleteClickListener deleteClickListener;
+
+
+
+    public interface OnEditClickListener {
+        void onEditClick(long id);
+    }
+
+    public interface OnDeleteClickListener {
+        void onDeleteClick(long id);
+    }
 
 
 
     public PantryAdapter(
+            ArrayList<Long> pantryIds,
             ArrayList<String> pantryNames,
-            ArrayList<String> pantryQuantities) {
+            ArrayList<String> pantryQuantities,
+            OnEditClickListener editClickListener,
+            OnDeleteClickListener deleteClickListener) {
 
+        this.pantryIds = pantryIds;
         this.pantryNames = pantryNames;
         this.pantryQuantities = pantryQuantities;
+
+        this.editClickListener = editClickListener;
+        this.deleteClickListener = deleteClickListener;
     }
+
+
 
 
 
@@ -34,7 +58,11 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.pantry_item, parent, false);
+                .inflate(
+                        R.layout.pantry_item,
+                        parent,
+                        false
+                );
 
         return new PantryViewHolder(view);
     }
@@ -46,6 +74,8 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             @NonNull PantryViewHolder holder,
             int position) {
 
+        long id = pantryIds.get(position);
+
         holder.txtIngredientName.setText(
                 pantryNames.get(position)
         );
@@ -53,13 +83,27 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         holder.txtIngredientQuantity.setText(
                 pantryQuantities.get(position)
         );
+
+        holder.btnEditIngredient.setOnClickListener(v -> {
+
+            editClickListener.onEditClick(id);
+
+        });
+
+        holder.btnDeleteIngredient.setOnClickListener(v -> {
+
+            deleteClickListener.onDeleteClick(id);
+
+        });
     }
 
 
 
     @Override
     public int getItemCount() {
+
         return pantryNames.size();
+
     }
 
     public static class PantryViewHolder
@@ -68,7 +112,12 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         TextView txtIngredientName;
         TextView txtIngredientQuantity;
 
-        public PantryViewHolder(@NonNull View itemView) {
+        Button btnEditIngredient;
+        Button btnDeleteIngredient;
+
+        public PantryViewHolder(
+                @NonNull View itemView) {
+
             super(itemView);
 
             txtIngredientName =
@@ -79,6 +128,16 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
             txtIngredientQuantity =
                     itemView.findViewById(
                             R.id.txtIngredientQuantity
+                    );
+
+            btnEditIngredient =
+                    itemView.findViewById(
+                            R.id.btnEditIngredient
+                    );
+
+            btnDeleteIngredient =
+                    itemView.findViewById(
+                            R.id.btnDeleteIngredient
                     );
         }
     }
