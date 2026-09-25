@@ -76,21 +76,21 @@ public class PantryAdapter
 
         long id = pantryIds.get(position);
 
-        holder.txtIngredientName.setText(
+        holder.txtIngName.setText(
                 pantryNames.get(position)
         );
 
-        holder.txtIngredientQuantity.setText(
+        holder.txtIngQuantity.setText(
                 pantryQuantities.get(position)
         );
 
-        holder.btnEditIngredient.setOnClickListener(v -> {
+        holder.btnEditIng.setOnClickListener(v -> {
 
             editClickListener.onEditClick(id);
 
         });
 
-        holder.btnDeleteIngredient.setOnClickListener(v -> {
+        holder.btnDeleteIng.setOnClickListener(v -> {
 
             deleteClickListener.onDeleteClick(id);
 
@@ -109,35 +109,35 @@ public class PantryAdapter
     public static class PantryViewHolder
             extends RecyclerView.ViewHolder {
 
-        TextView txtIngredientName;
-        TextView txtIngredientQuantity;
+        TextView txtIngName;
+        TextView txtIngQuantity;
 
-        Button btnEditIngredient;
-        Button btnDeleteIngredient;
+        Button btnEditIng;
+        Button btnDeleteIng;
 
         public PantryViewHolder(
                 @NonNull View itemView) {
 
             super(itemView);
 
-            txtIngredientName =
+            txtIngName =
                     itemView.findViewById(
-                            R.id.txtIngredientName
+                            R.id.txtIngName
                     );
 
-            txtIngredientQuantity =
+            txtIngQuantity =
                     itemView.findViewById(
-                            R.id.txtIngredientQuantity
+                            R.id.txtIngQuantity
                     );
 
-            btnEditIngredient =
+            btnEditIng =
                     itemView.findViewById(
-                            R.id.btnEditIngredient
+                            R.id.btnEditIng
                     );
 
-            btnDeleteIngredient =
+            btnDeleteIng =
                     itemView.findViewById(
-                            R.id.btnDeleteIngredient
+                            R.id.btnDeleteIng
                     );
         }
     }

@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/txtIngredientName"
+        android:id="@+id/txtIngName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tomatoes"
@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:id="@+id/txtIngredientQuantity"
+        android:id="@+id/txtIngQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="5 pieces"
@@ -36,7 +36,7 @@
 
 
         <Button
-            android:id="@+id/btnEditIngredient"
+            android:id="@+id/btnEditIng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EDIT" />
@@ -44,7 +44,7 @@
 
 
         <Button
-            android:id="@+id/btnDeleteIngredient"
+            android:id="@+id/btnDeleteIng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DELETE"

@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
         // ADD/
-        findViewById(R.id.btnAddIngredient)
+        findViewById(R.id.btnAddIng)
                 .setOnClickListener(v -> {
 
                     Intent intent = new Intent(
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                         "DELETE",
                         (dialog, which) -> {
 
-                            deleteIngredient(id);
+                            deleteIng(id);
 
                         }
                 )
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void deleteIngredient(long id) {
+    private void deleteIng(long id) {
 
         int result =
                 theDatabase.deletePantryItem(id);

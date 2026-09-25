@@ -246,7 +246,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
     // RecipeIngredient INSERTION.
-    public long insertRecipeIngredient(
+    public long insertRecipeIng(
             long recipeId,
             String name,
             double quantity,
@@ -360,21 +360,21 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "4. Toast sandwich with a frying pan until golden."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Bread",
                 2,
                 "slices"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cheese",
                 60,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 1,
@@ -398,35 +398,35 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "6. Cook until completion."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Egg",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 3,
                 "shakes"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 3,
                 "shakes"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Milk",
                 60,
                 "ml"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 1,
@@ -454,70 +454,70 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "10. Cook until potatoes are soft."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
                 2.3,
                 "cup"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 1.2,
                 "slice"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cinnamon Sticks",
                 3,
                 "sticks"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Star Anise",
                 3,
                 "cloves"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Bay Leaves",
                 3,
                 "leaves"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Ginger-garlic Paste",
                 2,
                 "teaspoons"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chaat Masala",
                 2,
                 "pot spoons"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cut Chicken",
                 8,
                 "pieces"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 30,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potatoes",
                 2,
@@ -545,77 +545,77 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "10. Cook until potatoes are soft."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
                 2.3,
                 "cup"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 1.2,
                 "slice"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cinnamon Sticks",
                 3,
                 "sticks"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Star Anise",
                 3,
                 "cloves"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Bay Leaves",
                 3,
                 "leaves"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Ginger-garlic Paste",
                 2,
                 "teaspoons"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomatoes",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chaat Masala",
                 2,
                 "pot spoons"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cut Mutton",
                 8,
                 "pieces"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 30,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potatoes",
                 2,
@@ -650,77 +650,77 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "17. Turn off heat, and add in the cooked pasta."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Pasta",
                 1,
                 "cup"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 30,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomato",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
                 2.3,
                 "cups"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 1.2,
                 "slices"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chilly",
                 3,
                 "slices"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Ginger-garlic Paste",
                 1,
                 "teaspoon"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cut Chicken",
                 250,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chaat Masala",
                 1,
                 "pot spoon"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 30,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cream",
                 1,
@@ -743,35 +743,35 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "5. Bake for 1 hour until potatoes are cooked."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potato",
                 10,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 500,
                 "ml"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Fresh Cream",
                 1,
                 "litre"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Bay Leaves",
                 3,
@@ -794,21 +794,21 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "5. Season with salt."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
                 500,
                 "ml"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potato",
                 800,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
@@ -830,21 +830,21 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "4. Season with salt."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomato",
                 5,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chilly",
                 2,
                 "slices"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
@@ -868,28 +868,28 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "6. Lay chicken skins on paper towels to soak up grease."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
                 1,
                 "teaspoon"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chicken",
                 8,
                 "skins"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 1,
@@ -912,14 +912,14 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "5. Take out for cooling."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomato",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
@@ -942,14 +942,14 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "5. Take out to cool, repeat with other potato slices."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potato",
                 4,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
@@ -973,35 +973,35 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "6. Season with salt and black pepper."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomato",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 2,
                 "tbsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 1,
@@ -1027,42 +1027,42 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "8. Season with salt and black pepper."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potato",
                 900,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 113,
                 "g"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cream",
                 120,
                 "ml"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 1,
@@ -1087,35 +1087,35 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "7. Turn crock pot to warm to serve better."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Potato",
                 5,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 1,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 5,
                 "tbsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Black Pepper",
                 1,
@@ -1138,42 +1138,42 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "5. Add cheese and cook till melted."
                 );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Butter",
                 1,
                 "tbsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Onion",
                 1.2,
                 "cup"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Tomato",
                 2,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Chilly",
                 4,
                 "whole"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Salt",
                 1,
                 "tsp"
         );
 
-        insertRecipeIngredient(
+        insertRecipeIng(
                 recipeId,
                 "Cheese",
                 170,
