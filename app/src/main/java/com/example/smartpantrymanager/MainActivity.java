@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Long> pantryIds;
     ArrayList<String> pantryNames;
     ArrayList<String> pantryQuantities;
-    com.example.smartpantrymanager.PantryAdapter pantryAdapter;
-    com.example.smartpantrymanager.TheDatabase theDatabase;
+    PantryAdapter pantryAdapter;
+    TheDatabase theDatabase;
 
 
 
@@ -38,13 +38,25 @@ public class MainActivity extends AppCompatActivity {
                 new LinearLayoutManager(this)
         );
 
-        theDatabase = new com.example.smartpantrymanager.TheDatabase(this);
+        theDatabase = new TheDatabase(this);
+
+
+
+        // THE 15 RECIPES.
+        theDatabase.seedRecipes();
+
+        android.util.Log.d(
+                "RECIPE_TEST",
+                "Recipe count: " +
+                        theDatabase.getRecipeCount()
+        );
+
 
         pantryIds = new ArrayList<>();
         pantryNames = new ArrayList<>();
         pantryQuantities = new ArrayList<>();
 
-        pantryAdapter = new com.example.smartpantrymanager.PantryAdapter(
+        pantryAdapter = new PantryAdapter(
                 pantryIds,
                 pantryNames,
                 pantryQuantities,
@@ -98,28 +110,28 @@ public class MainActivity extends AppCompatActivity {
                 long id =
                         cursor.getLong(
                                 cursor.getColumnIndexOrThrow(
-                                        com.example.smartpantrymanager.TheDatabase.PANTRY_ID
+                                        TheDatabase.PANTRY_ID
                                 )
                         );
 
                 String name =
                         cursor.getString(
                                 cursor.getColumnIndexOrThrow(
-                                        com.example.smartpantrymanager.TheDatabase.PANTRY_NAME
+                                        TheDatabase.PANTRY_NAME
                                 )
                         );
 
                 double quantity =
                         cursor.getDouble(
                                 cursor.getColumnIndexOrThrow(
-                                        com.example.smartpantrymanager.TheDatabase.PANTRY_QUANTITY
+                                        TheDatabase.PANTRY_QUANTITY
                                 )
                         );
 
                 String unit =
                         cursor.getString(
                                 cursor.getColumnIndexOrThrow(
-                                        com.example.smartpantrymanager.TheDatabase.PANTRY_UNIT
+                                        TheDatabase.PANTRY_UNIT
                                 )
                         );
 

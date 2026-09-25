@@ -219,4 +219,965 @@ public class TheDatabase extends SQLiteOpenHelper {
                 null
         );
     }
+
+
+
+
+
+    // Recipe INSERTION.
+    public long insertRecipe(
+            String name,
+            String instructions) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(RECIPE_NAME, name);
+        values.put(RECIPE_INSTRUCTIONS, instructions);
+
+        return db.insert(
+                TABLE_RECIPE,
+                null,
+                values
+        );
+    }
+
+
+
+    // RecipeIngredient INSERTION.
+    public long insertRecipeIngredient(
+            long recipeId,
+            String name,
+            double quantity,
+            String unit) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(
+                RECIPE_INGREDIENT_RECIPE_ID,
+                recipeId
+        );
+
+        values.put(
+                RECIPE_INGREDIENT_NAME,
+                name
+        );
+
+        values.put(
+                RECIPE_INGREDIENT_QUANTITY,
+                quantity
+        );
+
+        values.put(
+                RECIPE_INGREDIENT_UNIT,
+                unit
+        );
+
+        return db.insert(
+                TABLE_RECIPE_INGREDIENT,
+                null,
+                values
+        );
+    }
+
+
+
+    // Recipe COUNT.
+    public int getRecipeCount() {
+
+        SQLiteDatabase db =
+                this.getReadableDatabase();
+
+        Cursor cursor =
+                db.rawQuery(
+                        "SELECT COUNT(*) FROM " +
+                                TABLE_RECIPE,
+                        null
+                );
+
+        int count = 0;
+
+        if (cursor.moveToFirst()) {
+
+            count = cursor.getInt(0);
+        }
+
+        cursor.close();
+
+        return count;
+    }
+
+
+
+
+
+    // Recipe DATABASE SEEDING.
+    public void seedRecipes() {
+
+        if (getRecipeCount() > 0) {
+
+            return;
+        }
+
+        seedCheeseToast();
+        seedScrambledEggs();
+        seedChickenCurry();
+        seedMuttonCurry();
+        seedButterChickenPasta();
+        seedPotatoBake();
+        seedPerfectChips();
+        seedTomatoJalapenoSalsita();
+        seedRoastedChickenSkins();
+        seedTomatoChips();
+        seedMicrowavePotatoChips();
+        seedTomatoSoup();
+        seedMashedPotatoes();
+        seedBakedPotatoes();
+        seedChileConQueso();
+    }
+
+
+
+
+
+
+
+
+
+
+    // RECIPE 1: Cheese Toast.
+    private void seedCheeseToast() {
+
+        long recipeId =
+                insertRecipe(
+                        "Cheese Toast",
+                        "1. Butter one side of each bread. " +
+                                "2. Add shredded cheese on top of the plain side of 1 bread." +
+                                "3. Sandwich cheese side with the plain side of the other bread." +
+                                "4. Toast sandwich with a frying pan until golden."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Bread",
+                2,
+                "slices"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cheese",
+                60,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                1,
+                "tablespoon"
+        );
+    }
+
+
+
+    // RECIPE 2: Scrambled Eggs.
+    private void seedScrambledEggs() {
+
+        long recipeId =
+                insertRecipe(
+                        "Scrambled Eggs",
+                        "1. Crack eggs into a bowl, and mix." +
+                                "2. Add salt and black pepper seasonings, a little milk, and mix." +
+                                "3. Add butter into a low heat, frying pan." +
+                                "4. Pour the bowl's contents into frying pan." +
+                                "5. With a spatula, bring the liquid to the middle every few seconds." +
+                                "6. Cook until completion."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Egg",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                3,
+                "shakes"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                3,
+                "shakes"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Milk",
+                60,
+                "ml"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                1,
+                "teaspoon"
+        );
+    }
+
+
+
+    // Recipe 3: Chicken Curry.
+    private void seedChickenCurry() {
+
+        long recipeId =
+                insertRecipe(
+                        "Chicken Curry",
+                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot." +
+                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste." +
+                                "3. Cook until onions are easy to cut through with a pot spoon." +
+                                "4. Add chaat masala, and mix." +
+                                "5. Add all cut chicken pieces, and mix." +
+                                "6. Add salt, and cover with pot with lid to cook for 15 minutes." +
+                                "7. Throughout 15 minutes, periodically stir the contents in the pot." +
+                                "8. Peel and cut potatoes, and throw them in the pot" +
+                                "9. Add hot water until it almost covers the chicken and potatoes." +
+                                "10. Cook until potatoes are soft."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Sunflower Oil",
+                2.3,
+                "cup"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                1.2,
+                "slice"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cinnamon Sticks",
+                3,
+                "sticks"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Star Anise",
+                3,
+                "cloves"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Bay Leaves",
+                3,
+                "leaves"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Ginger-garlic Paste",
+                2,
+                "teaspoons"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chaat Masala",
+                2,
+                "pot spoons"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cut Chicken",
+                8,
+                "pieces"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                30,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potatoes",
+                2,
+                "whole"
+        );
+    }
+
+
+
+    // RECIPE 4: Mutton Curry.
+    private void seedMuttonCurry() {
+
+        long recipeId =
+                insertRecipe(
+                        "Mutton Curry",
+                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot." +
+                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste." +
+                                "3. Cook until onions are soft to cut through with a pot spoon." +
+                                "4. Add chaat masala, sliced tomatoes, and mix." +
+                                "5. Add all cut mutton pieces, and mix." +
+                                "6. Add salt, and cover with the pit with lid to cook for 15 minutes." +
+                                "7. Throughout 15 minutes, periodically stir the contents in the pot." +
+                                "8. Peel and cut potatoes, and throw them in the pot" +
+                                "9. Add hot water until it almost covers the chicken and potatoes." +
+                                "10. Cook until potatoes are soft."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Sunflower Oil",
+                2.3,
+                "cup"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                1.2,
+                "slice"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cinnamon Sticks",
+                3,
+                "sticks"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Star Anise",
+                3,
+                "cloves"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Bay Leaves",
+                3,
+                "leaves"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Ginger-garlic Paste",
+                2,
+                "teaspoons"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomatoes",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chaat Masala",
+                2,
+                "pot spoons"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cut Mutton",
+                8,
+                "pieces"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                30,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potatoes",
+                2,
+                "whole"
+        );
+    }
+
+
+
+    // RECIPE 5: Butter-Chicken Pasta.
+    private void seedButterChickenPasta() {
+
+        long recipeId =
+                insertRecipe(
+                        "Butter-Chicken Pasta",
+                        "1. On medium heat, add pasta into a pot of boiling water." +
+                                "2. Add salt and sunflower oil." +
+                                "3. Cook pasta for 7 minutes." +
+                                "4. In the meantime, slice tomatos and puree them." +
+                                "5. Drain water, and set pasta aside." +
+                                "6. With the same pot on low heat, pour sunflower oil until it covers the bottom." +
+                                "7. Add onion, chilly, and ginger-garlic paste." +
+                                "8. Cook until onions are soft to cut through with a pot spoon." +
+                                "9. Add cut chicken, and chaat masala." +
+                                "10. Cook for 5 minutes" +
+                                "11. Add salt" +
+                                "12. Cook for 5 minutes" +
+                                "13. Add tomato puree." +
+                                "14. Cook for 5 minutes" +
+                                "15. Pour in fresh cream." +
+                                "16. Cook for 2 minutes." +
+                                "17. Turn off heat, and add in the cooked pasta."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Pasta",
+                1,
+                "cup"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                30,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomato",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Sunflower Oil",
+                2.3,
+                "cups"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                1.2,
+                "slices"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chilly",
+                3,
+                "slices"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Ginger-garlic Paste",
+                1,
+                "teaspoon"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cut Chicken",
+                250,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chaat Masala",
+                1,
+                "pot spoon"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                30,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cream",
+                1,
+                "cup"
+        );
+    }
+
+
+
+    // RECIPE 6: Potato Bake.
+    private void seedPotatoBake() {
+
+        long recipeId =
+                insertRecipe(
+                        "Potato Bake",
+                        "1. Preheat oven to 180 degrees Celsius. " +
+                                "2. Slice thin potatoes, and layer them in a dish." +
+                                "3. Going layer-by-layer, sprinkle salt and black pepper seasonings." +
+                                "4. Pour fresh cream over potatoes, and add bay leaves." +
+                                "5. Bake for 1 hour until potatoes are cooked."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potato",
+                10,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                500,
+                "ml"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Fresh Cream",
+                1,
+                "litre"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Bay Leaves",
+                3,
+                "leaves"
+        );
+    }
+
+
+
+    // RECIPE 7: Potato Chips.
+    private void seedPerfectChips() {
+
+        long recipeId =
+                insertRecipe(
+                        "The Perfect Chips",
+                        "1. Peel and cut potatoes into finger-sized chips." +
+                                "2. On a high heat, medium pan, pour oil until 8cm deep." +
+                                "3. Add potato chips in a metal sieve, and lower into pan." +
+                                "4. Cook for 8 minutes." +
+                                "5. Season with salt."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Sunflower Oil",
+                500,
+                "ml"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potato",
+                800,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 8: Roasted Tomato & Jalapeño Salsita.
+    private void seedTomatoJalapenoSalsita() {
+
+        long recipeId =
+                insertRecipe(
+                        "Roasted Tomato & Jalapeno Salsita",
+                        "1. Preheat boiler." +
+                                "2. Place tomatoes and chillies on baking sheet lined with aluminum foil." +
+                                "3. Place under boiler and roast for 15 minutes while flipping in between." +
+                                "4. Season with salt."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomato",
+                5,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chilly",
+                2,
+                "slices"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 9: Roasted Chicken Skins.
+    private void seedRoastedChickenSkins() {
+
+        long recipeId =
+                insertRecipe(
+                        "Roasted Chicken Skins",
+                        "1. Preheat oven to 450 degrees Celsius." +
+                                "2. Line baking sheet with aluminum foil, and lightly oil it." +
+                                "3. Pat dry the chicken skin, and lay it flat on foil." +
+                                "4. Season with salt and black pepper." +
+                                "5. Bake chicken skins for 15 minutes." +
+                                "6. Lay chicken skins on paper towels to soak up grease."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Sunflower Oil",
+                1,
+                "teaspoon"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chicken",
+                8,
+                "skins"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 10: Tomato Chips.
+    private void seedTomatoChips() {
+
+        long recipeId =
+                insertRecipe(
+                        "Tomato Chips",
+                        "1. Slice tomato about 1 inch thick, and pat dry with paper towels." +
+                                "2. Season with salt, and let it sit for 15 minutes." +
+                                "3. Lay tomato slices flat on plate sprayed with cooking spray." +
+                                "4. Mist tomato slices with cooking spray, and microwave for 5 minutes." +
+                                "5. Take out for cooling."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomato",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 11: Microwave Potato Chips.
+    private void seedMicrowavePotatoChips() {
+
+        long recipeId =
+                insertRecipe(
+                        "Microwave Potato Chips",
+                        "1. Clean and slice potatoes paper thin." +
+                                "2. Place potato slices on baking sheet, and season with salt." +
+                                "3. Cover potato slices with another baking sheet." +
+                                "4. Microwave for 8 minutes." +
+                                "5. Take out to cool, repeat with other potato slices."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potato",
+                4,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // Recipe 12: Tomato Soup.
+    private void seedTomatoSoup() {
+
+        long recipeId =
+                insertRecipe(
+                        "Tomato Soup",
+                        "1. Blanch tomato before chopping into small pieces." +
+                                "2. Add butter, chopped onions,and tomatoes into a pot filled with a little water." +
+                                "3. Cook on medium heat till contents thicken." +
+                                "4. Remove from heat, and blend content in a blender." +
+                                "5. Add water for preferred consistency." +
+                                "6. Season with salt and black pepper."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomato",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                2,
+                "tbsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 13: Yukon Gold Mashed Potatoes.
+    private void seedMashedPotatoes() {
+
+        long recipeId =
+                insertRecipe(
+                        "Yukon Gold Mashed Potatoes",
+                        "1. Peel and cut potatoes into 1 inch chunks" +
+                                "2. Add potato chunks and salt into pot with cold water." +
+                                "3. Boil, then simmer, and cook for 20 minutes." +
+                                "4. Meanwhile, warm fresh cream and butter separately until it melts." +
+                                "5. Drain potatoes, and dry over low heat in the same pot." +
+                                "6. Mast potatoes." +
+                                "7. Pour melted butter, then warm cream gently." +
+                                "8. Season with salt and black pepper."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potato",
+                900,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                113,
+                "g"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cream",
+                120,
+                "ml"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // Recipe 14: Crock Pot Baked Potatoes.
+    private void seedBakedPotatoes() {
+
+        long recipeId =
+                insertRecipe(
+                        "Crock Pot Baked Potatoes",
+                        "1. Prick potatoes with fork." +
+                                "2. Wrap each potato in aluminium foil with a slice of onion, butter, salt, and black pepper." +
+                                "3. Layer potatoes at the bottom of crock pot." +
+                                "4. Pour half-a-cup of water in crock pot." +
+                                "5. Cook on high heat for 5/6 hours." +
+                                "6. Rotate potatoes occasionally." +
+                                "7. Turn crock pot to warm to serve better."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Potato",
+                5,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                1,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                5,
+                "tbsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Black Pepper",
+                1,
+                "tsp"
+        );
+    }
+
+
+
+    // RECIPE 15: Chile Con Queso.
+    private void seedChileConQueso() {
+
+        long recipeId =
+                insertRecipe(
+                        "Chile Con Queso",
+                        "1. Melt butter in skillet" +
+                                "2. Add onions and cook till soft." +
+                                "3. Add tomatoes, chillies, and salt into onion mixture." +
+                                "4. Reduce to low heat for 10 minutes for liquid to evaporate." +
+                                "5. Add cheese and cook till melted."
+                );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Butter",
+                1,
+                "tbsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Onion",
+                1.2,
+                "cup"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Tomato",
+                2,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Chilly",
+                4,
+                "whole"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Salt",
+                1,
+                "tsp"
+        );
+
+        insertRecipeIngredient(
+                recipeId,
+                "Cheese",
+                170,
+                "g"
+        );
+    }
 }
