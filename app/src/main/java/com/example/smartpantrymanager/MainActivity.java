@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 // EDIT.
                 id -> openEditScreen(id),
 
-                // DELETE/
+                // DELETE.
                 id -> confirmDelete(id)
         );
 
@@ -72,13 +72,34 @@ public class MainActivity extends AppCompatActivity {
                 pantryAdapter
         );
 
-        // ADD/
+        // ADD.
         findViewById(R.id.btnAddIng)
                 .setOnClickListener(v -> {
 
                     Intent intent = new Intent(
                             MainActivity.this,
                             AddEditActivity.class
+                    );
+
+                    startActivity(intent);
+                });
+
+
+
+
+
+        // TEST!!! RecipeDetails Screen.
+        findViewById(R.id.btnTestRecipe)
+                .setOnClickListener(v -> {
+
+                    Intent intent = new Intent(
+                            MainActivity.this,
+                            RecipeDetailsActivity.class
+                    );
+
+                    intent.putExtra(
+                            "RECIPE_ID",
+                            2L
                     );
 
                     startActivity(intent);

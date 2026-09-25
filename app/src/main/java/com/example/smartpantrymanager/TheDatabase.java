@@ -354,10 +354,10 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Cheese Toast",
-                        "1. Butter one side of each bread. " +
-                                "2. Add shredded cheese on top of the plain side of 1 bread." +
-                                "3. Sandwich cheese side with the plain side of the other bread." +
-                                "4. Toast sandwich with a frying pan until golden."
+                        "1. Butter one side of each bread.\n\n" +
+                                "2. Add shredded cheese on top of the plain side of 1 bread.\n\n" +
+                                "3. Sandwich cheese side with the plain side of the other bread.\n\n" +
+                                "4. Toast sandwich with a frying pan until golden.\n\n"
                 );
 
         insertRecipeIng(
@@ -390,12 +390,12 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Scrambled Eggs",
-                        "1. Crack eggs into a bowl, and mix." +
-                                "2. Add salt and black pepper seasonings, a little milk, and mix." +
-                                "3. Add butter into a low heat, frying pan." +
-                                "4. Pour the bowl's contents into frying pan." +
-                                "5. With a spatula, bring the liquid to the middle every few seconds." +
-                                "6. Cook until completion."
+                        "1. Crack eggs into a bowl, and mix.\n\n" +
+                                "2. Add salt and black pepper seasonings, a little milk, and mix.\n\n" +
+                                "3. Add butter into a low heat, frying pan.\n\n" +
+                                "4. Pour the bowl's contents into frying pan.\n\n" +
+                                "5. With a spatula, bring the liquid to the middle every few seconds.\n\n" +
+                                "6. Cook until completion.\n\n"
                 );
 
         insertRecipeIng(
@@ -442,16 +442,16 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Chicken Curry",
-                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot." +
-                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste." +
-                                "3. Cook until onions are easy to cut through with a pot spoon." +
-                                "4. Add chaat masala, and mix." +
-                                "5. Add all cut chicken pieces, and mix." +
-                                "6. Add salt, and cover with pot with lid to cook for 15 minutes." +
-                                "7. Throughout 15 minutes, periodically stir the contents in the pot." +
-                                "8. Peel and cut potatoes, and throw them in the pot" +
-                                "9. Add hot water until it almost covers the chicken and potatoes." +
-                                "10. Cook until potatoes are soft."
+                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot.\n\n" +
+                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste.\n\n" +
+                                "3. Cook until onions are easy to cut through with a pot spoon.\n\n" +
+                                "4. Add chaat masala, and mix.\n\n" +
+                                "5. Add all cut chicken pieces, and mix.\n\n" +
+                                "6. Add salt, and cover with pot with lid to cook for 15 minutes.\n\n" +
+                                "7. Throughout 15 minutes, periodically stir the contents in the pot.\n\n" +
+                                "8. Peel and cut potatoes, and throw them in the pot.\n\n" +
+                                "9. Add hot water until it almost covers the chicken and potatoes.\n\n" +
+                                "10. Cook until potatoes are soft.\n\n"
                 );
 
         insertRecipeIng(
@@ -533,16 +533,16 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Mutton Curry",
-                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot." +
-                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste." +
-                                "3. Cook until onions are soft to cut through with a pot spoon." +
-                                "4. Add chaat masala, sliced tomatoes, and mix." +
-                                "5. Add all cut mutton pieces, and mix." +
-                                "6. Add salt, and cover with the pit with lid to cook for 15 minutes." +
-                                "7. Throughout 15 minutes, periodically stir the contents in the pot." +
-                                "8. Peel and cut potatoes, and throw them in the pot" +
-                                "9. Add hot water until it almost covers the chicken and potatoes." +
-                                "10. Cook until potatoes are soft."
+                        "1. On low heat, pour sunflower oil until it covers the bottom of the pot.\n\n" +
+                                "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste.\n\n" +
+                                "3. Cook until onions are soft to cut through with a pot spoon.\n\n" +
+                                "4. Add chaat masala, sliced tomatoes, and mix.\n\n" +
+                                "5. Add all cut mutton pieces, and mix.\n\n" +
+                                "6. Add salt, and cover with the pit with lid to cook for 15 minutes.\n\n" +
+                                "7. Throughout 15 minutes, periodically stir the contents in the pot.\n\n" +
+                                "8. Peel and cut potatoes, and throw them in the pot.\n\n" +
+                                "9. Add hot water until it almost covers the chicken and potatoes.\n\n" +
+                                "10. Cook until potatoes are soft.\n\n"
                 );
 
         insertRecipeIng(
@@ -631,23 +631,23 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Butter-Chicken Pasta",
-                        "1. On medium heat, add pasta into a pot of boiling water." +
-                                "2. Add salt and sunflower oil." +
-                                "3. Cook pasta for 7 minutes." +
-                                "4. In the meantime, slice tomatos and puree them." +
-                                "5. Drain water, and set pasta aside." +
-                                "6. With the same pot on low heat, pour sunflower oil until it covers the bottom." +
-                                "7. Add onion, chilly, and ginger-garlic paste." +
-                                "8. Cook until onions are soft to cut through with a pot spoon." +
-                                "9. Add cut chicken, and chaat masala." +
-                                "10. Cook for 5 minutes" +
-                                "11. Add salt" +
-                                "12. Cook for 5 minutes" +
-                                "13. Add tomato puree." +
-                                "14. Cook for 5 minutes" +
-                                "15. Pour in fresh cream." +
-                                "16. Cook for 2 minutes." +
-                                "17. Turn off heat, and add in the cooked pasta."
+                        "1. On medium heat, add pasta into a pot of boiling water.\n\n" +
+                                "2. Add salt and sunflower oil.\n\n" +
+                                "3. Cook pasta for 7 minutes.\n\n" +
+                                "4. In the meantime, slice tomatos and puree them.\n\n" +
+                                "5. Drain water, and set pasta aside.\n\n" +
+                                "6. With the same pot on low heat, pour sunflower oil until it covers the bottom.\n\n" +
+                                "7. Add onion, chilly, and ginger-garlic paste.\n\n" +
+                                "8. Cook until onions are soft to cut through with a pot spoon.\n\n" +
+                                "9. Add cut chicken, and chaat masala.\n\n" +
+                                "10. Cook for 5 minutes.\n\n" +
+                                "11. Add salt.\n\n" +
+                                "12. Cook for 5 minutes.\n\n" +
+                                "13. Add tomato puree.\n\n" +
+                                "14. Cook for 5 minutes.\n\n" +
+                                "15. Pour in fresh cream.\n\n" +
+                                "16. Cook for 2 minutes.\n\n" +
+                                "17. Turn off heat, and add in the cooked pasta.\n\n"
                 );
 
         insertRecipeIng(
@@ -736,11 +736,11 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Potato Bake",
-                        "1. Preheat oven to 180 degrees Celsius. " +
-                                "2. Slice thin potatoes, and layer them in a dish." +
-                                "3. Going layer-by-layer, sprinkle salt and black pepper seasonings." +
-                                "4. Pour fresh cream over potatoes, and add bay leaves." +
-                                "5. Bake for 1 hour until potatoes are cooked."
+                        "1. Preheat oven to 180 degrees Celsius.\n\n" +
+                                "2. Slice thin potatoes, and layer them in a dish.\n\n" +
+                                "3. Going layer-by-layer, sprinkle salt and black pepper seasonings.\n\n" +
+                                "4. Pour fresh cream over potatoes, and add bay leaves.\n\n" +
+                                "5. Bake for 1 hour until potatoes are cooked.\n\n"
                 );
 
         insertRecipeIng(
@@ -787,11 +787,11 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "The Perfect Chips",
-                        "1. Peel and cut potatoes into finger-sized chips." +
-                                "2. On a high heat, medium pan, pour oil until 8cm deep." +
-                                "3. Add potato chips in a metal sieve, and lower into pan." +
-                                "4. Cook for 8 minutes." +
-                                "5. Season with salt."
+                        "1. Peel and cut potatoes into finger-sized chips.\n\n" +
+                                "2. On a high heat, medium pan, pour oil until 8cm deep.\n\n" +
+                                "3. Add potato chips in a metal sieve, and lower into pan.\n\n" +
+                                "4. Cook for 8 minutes.\n\n" +
+                                "5. Season with salt.\n\n"
                 );
 
         insertRecipeIng(
@@ -824,10 +824,10 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Roasted Tomato & Jalapeno Salsita",
-                        "1. Preheat boiler." +
-                                "2. Place tomatoes and chillies on baking sheet lined with aluminum foil." +
-                                "3. Place under boiler and roast for 15 minutes while flipping in between." +
-                                "4. Season with salt."
+                        "1. Preheat boiler.\n\n" +
+                                "2. Place tomatoes and chillies on baking sheet lined with aluminum foil.\n\n" +
+                                "3. Place under boiler and roast for 15 minutes while flipping in between.\n\n" +
+                                "4. Season with salt.\n\n"
                 );
 
         insertRecipeIng(
@@ -860,12 +860,12 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Roasted Chicken Skins",
-                        "1. Preheat oven to 450 degrees Celsius." +
-                                "2. Line baking sheet with aluminum foil, and lightly oil it." +
-                                "3. Pat dry the chicken skin, and lay it flat on foil." +
-                                "4. Season with salt and black pepper." +
-                                "5. Bake chicken skins for 15 minutes." +
-                                "6. Lay chicken skins on paper towels to soak up grease."
+                        "1. Preheat oven to 450 degrees Celsius.\n\n" +
+                                "2. Line baking sheet with aluminum foil, and lightly oil it.\n\n" +
+                                "3. Pat dry the chicken skin, and lay it flat on foil.\n\n" +
+                                "4. Season with salt and black pepper.\n\n" +
+                                "5. Bake chicken skins for 15 minutes.\n\n" +
+                                "6. Lay chicken skins on paper towels to soak up grease.\n\n"
                 );
 
         insertRecipeIng(
@@ -905,11 +905,11 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Tomato Chips",
-                        "1. Slice tomato about 1 inch thick, and pat dry with paper towels." +
-                                "2. Season with salt, and let it sit for 15 minutes." +
-                                "3. Lay tomato slices flat on plate sprayed with cooking spray." +
-                                "4. Mist tomato slices with cooking spray, and microwave for 5 minutes." +
-                                "5. Take out for cooling."
+                        "1. Slice tomato about 1 inch thick, and pat dry with paper towels.\n\n" +
+                                "2. Season with salt, and let it sit for 15 minutes.\n\n" +
+                                "3. Lay tomato slices flat on plate sprayed with cooking spray.\n\n" +
+                                "4. Mist tomato slices with cooking spray, and microwave for 5 minutes.\n\n" +
+                                "5. Take out for cooling.\n\n"
                 );
 
         insertRecipeIng(
@@ -935,11 +935,11 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Microwave Potato Chips",
-                        "1. Clean and slice potatoes paper thin." +
-                                "2. Place potato slices on baking sheet, and season with salt." +
-                                "3. Cover potato slices with another baking sheet." +
-                                "4. Microwave for 8 minutes." +
-                                "5. Take out to cool, repeat with other potato slices."
+                        "1. Clean and slice potatoes paper thin.\n\n" +
+                                "2. Place potato slices on baking sheet, and season with salt.\n\n" +
+                                "3. Cover potato slices with another baking sheet.\n\n" +
+                                "4. Microwave for 8 minutes.\n\n" +
+                                "5. Take out to cool, repeat with other potato slices.\n\n"
                 );
 
         insertRecipeIng(
@@ -965,12 +965,12 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Tomato Soup",
-                        "1. Blanch tomato before chopping into small pieces." +
-                                "2. Add butter, chopped onions,and tomatoes into a pot filled with a little water." +
-                                "3. Cook on medium heat till contents thicken." +
-                                "4. Remove from heat, and blend content in a blender." +
-                                "5. Add water for preferred consistency." +
-                                "6. Season with salt and black pepper."
+                        "1. Blanch tomato before chopping into small pieces.\n\n" +
+                                "2. Add butter, chopped onions,and tomatoes into a pot filled with a little water.\n\n" +
+                                "3. Cook on medium heat till contents thicken.\n\n" +
+                                "4. Remove from heat, and blend content in a blender.\n\n" +
+                                "5. Add water for preferred consistency.\n\n" +
+                                "6. Season with salt and black pepper.\n\n"
                 );
 
         insertRecipeIng(
@@ -1017,14 +1017,14 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Yukon Gold Mashed Potatoes",
-                        "1. Peel and cut potatoes into 1 inch chunks" +
-                                "2. Add potato chunks and salt into pot with cold water." +
-                                "3. Boil, then simmer, and cook for 20 minutes." +
-                                "4. Meanwhile, warm fresh cream and butter separately until it melts." +
-                                "5. Drain potatoes, and dry over low heat in the same pot." +
-                                "6. Mast potatoes." +
-                                "7. Pour melted butter, then warm cream gently." +
-                                "8. Season with salt and black pepper."
+                        "1. Peel and cut potatoes into 1 inch chunks.\n\n" +
+                                "2. Add potato chunks and salt into pot with cold water.\n\n" +
+                                "3. Boil, then simmer, and cook for 20 minutes.\n\n" +
+                                "4. Meanwhile, warm fresh cream and butter separately until it melts.\n\n" +
+                                "5. Drain potatoes, and dry over low heat in the same pot.\n\n" +
+                                "6. Mast potatoes.\n\n" +
+                                "7. Pour melted butter, then warm cream gently.\n\n" +
+                                "8. Season with salt and black pepper.\n\n"
                 );
 
         insertRecipeIng(
@@ -1078,13 +1078,13 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Crock Pot Baked Potatoes",
-                        "1. Prick potatoes with fork." +
-                                "2. Wrap each potato in aluminium foil with a slice of onion, butter, salt, and black pepper." +
-                                "3. Layer potatoes at the bottom of crock pot." +
-                                "4. Pour half-a-cup of water in crock pot." +
-                                "5. Cook on high heat for 5/6 hours." +
-                                "6. Rotate potatoes occasionally." +
-                                "7. Turn crock pot to warm to serve better."
+                        "1. Prick potatoes with fork.\n\n" +
+                                "2. Wrap each potato in aluminium foil with a slice of onion, butter, salt, and black pepper.\n\n" +
+                                "3. Layer potatoes at the bottom of crock pot.\n\n" +
+                                "4. Pour half-a-cup of water in crock pot.\n\n" +
+                                "5. Cook on high heat for 5/6 hours.\n\n" +
+                                "6. Rotate potatoes occasionally.\n\n" +
+                                "7. Turn crock pot to warm to serve better.\n\n"
                 );
 
         insertRecipeIng(
@@ -1131,11 +1131,11 @@ public class TheDatabase extends SQLiteOpenHelper {
         long recipeId =
                 insertRecipe(
                         "Chile Con Queso",
-                        "1. Melt butter in skillet" +
-                                "2. Add onions and cook till soft." +
-                                "3. Add tomatoes, chillies, and salt into onion mixture." +
-                                "4. Reduce to low heat for 10 minutes for liquid to evaporate." +
-                                "5. Add cheese and cook till melted."
+                        "1. Melt butter in skillet.\n\n" +
+                                "2. Add onions and cook till soft.\n\n" +
+                                "3. Add tomatoes, chillies, and salt into onion mixture.\n\n" +
+                                "4. Reduce to low heat for 10 minutes for liquid to evaporate.\n\n" +
+                                "5. Add cheese and cook till melted.\n\n"
                 );
 
         insertRecipeIng(
@@ -1178,6 +1178,46 @@ public class TheDatabase extends SQLiteOpenHelper {
                 "Cheese",
                 170,
                 "g"
+        );
+    }
+
+
+
+
+
+    // Recipe ID RETRIEVAL.
+    public Cursor getRecipeById(long id) {
+
+        SQLiteDatabase db =
+                this.getReadableDatabase();
+
+        return db.query(
+                TABLE_RECIPE,
+                null,
+                RECIPE_ID + "=?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
+        );
+    }
+
+
+
+    // RecipeIngredient RETRIEVAL.
+    public Cursor getRecipeIng(long recipeId) {
+
+        SQLiteDatabase db =
+                this.getReadableDatabase();
+
+        return db.query(
+                TABLE_RECIPE_INGREDIENT,
+                null,
+                RECIPE_INGREDIENT_RECIPE_ID + "=?",
+                new String[]{String.valueOf(recipeId)},
+                null,
+                null,
+                RECIPE_INGREDIENT_ID + " ASC"
         );
     }
 }

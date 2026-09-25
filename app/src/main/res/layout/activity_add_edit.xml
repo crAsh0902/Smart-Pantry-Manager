@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+
+        <TextView
+            android:id="@+id/txtAddIngTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD YOUR INGREDIENT"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:paddingBottom="24dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name of Ingredient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtIName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g. Tomato"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity Of Ingredient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtIQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g. 5"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unit of Ingredient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtIUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g. pieces"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredient's Expiry Date"
+            android:textSize="16sp" />
+
+
+
+        <EditText
+            android:id="@+id/edtIExpiryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Optional - YYYY-MM-DD"
+            android:inputType="text"
+            android:layout_marginBottom="24dp" />
+
+
+
+        <Button
+            android:id="@+id/btnSaveIng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAVE" />
+    </LinearLayout>
+
+</ScrollView>
