@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
+<!-- RecipeDetailsActivity.java -->
+
+
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -15,6 +21,7 @@
 
 
 
+    <!-- HEADER. -->
     <TextView
         android:id="@+id/txtRecipeName"
         android:layout_width="match_parent"
@@ -26,6 +33,7 @@
 
 
 
+    <!-- Ingredients'. -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,6 +44,7 @@
 
 
 
+    <!-- Ingredients' LIST. -->
     <TextView
         android:id="@+id/txtRecipeIng"
         android:layout_width="match_parent"
@@ -46,6 +55,7 @@
 
 
 
+    <!-- Instructions. -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,8 +66,9 @@
 
 
 
+    <!-- Recipe's Instructions. -->
     <TextView
-        android:id="@+id/txtRecipeInstructions"
+        android:id="@+id/txtRecipeInst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Instructions"

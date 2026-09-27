@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 
 
+// TheDatabase.java
+// activity_add_edit.xml
+
+
+
 public class AddEditActivity extends AppCompatActivity {
 
     EditText edtIngName;
@@ -19,11 +24,11 @@ public class AddEditActivity extends AppCompatActivity {
 
     Button btnSaveIng;
     TheDatabase theDatabase;
-
     long pantryId = -1;
 
 
 
+    // CONNECTED TO activity_add_edit.xml
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,42 +38,47 @@ public class AddEditActivity extends AppCompatActivity {
         );
 
         edtIngName = findViewById(
-                R.id.edtIName
+                R.id.edtIngName
         );
 
         edtIngQuantity = findViewById(
-                R.id.edtIQuantity
+                R.id.edtIngQuantity
         );
 
         edtIngUnit = findViewById(
-                R.id.edtIUnit
+                R.id.edtIngUnit
         );
 
         edtIngExpiryDate = findViewById(
-                R.id.edtIExpiryDate
+                R.id.edtIngExpiryDate
         );
 
         btnSaveIng = findViewById(
                 R.id.btnSaveIng
         );
 
+
+
+        // CONNECTED to TheDatabase.java
         theDatabase = new TheDatabase(this);
 
 
 
+        // Existing PantryItem Edit CHECK.
         pantryId = getIntent().getLongExtra(
                 "PANTRY_ID",
                 -1
         );
 
         if (pantryId != -1) {
-
             loadIngForEditing();
 
         }
 
-        btnSaveIng.setOnClickListener(v -> {
 
+
+        // SAVE.
+        btnSaveIng.setOnClickListener(v -> {
             saveIng();
 
         });
@@ -133,7 +143,7 @@ public class AddEditActivity extends AppCompatActivity {
 
         TextView title =
                 findViewById(
-                        R.id.txtAddIngTitle
+                        R.id.txtIngTitle
                 );
 
         title.setText("EDIT INGREDIENT");
@@ -167,10 +177,11 @@ public class AddEditActivity extends AppCompatActivity {
 
 
 
+        // IngName CHECK.
         if (name.isEmpty()) {
 
             edtIngName.setError(
-                    "Please enter an ingredient name"
+                    "Please enter an ingredient name."
             );
 
             edtIngName.requestFocus();
@@ -180,10 +191,11 @@ public class AddEditActivity extends AppCompatActivity {
 
 
 
+        // IngQuantity CHECK.
         if (quantityText.isEmpty()) {
 
             edtIngQuantity.setError(
-                    "Please enter a quantity"
+                    "Please enter ingredient quantity."
             );
 
             edtIngQuantity.requestFocus();
@@ -202,7 +214,7 @@ public class AddEditActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
 
             edtIngQuantity.setError(
-                    "Please enter a valid number"
+                    "Please enter a valid number."
             );
 
             edtIngQuantity.requestFocus();
@@ -210,10 +222,11 @@ public class AddEditActivity extends AppCompatActivity {
             return;
         }
 
+        // > 0
         if (quantity <= 0) {
 
             edtIngQuantity.setError(
-                    "Quantity must be greater than zero"
+                    "Quantity must be greater than zero."
             );
 
             edtIngQuantity.requestFocus();
@@ -223,10 +236,11 @@ public class AddEditActivity extends AppCompatActivity {
 
 
 
+        // IngUnit CHECK.
         if (unit.isEmpty()) {
 
             edtIngUnit.setError(
-                    "Please enter a unit"
+                    "Please enter ingredient unit."
             );
 
             edtIngUnit.requestFocus();
@@ -256,7 +270,7 @@ public class AddEditActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient added",
+                        "Ingredient added!",
                         Toast.LENGTH_SHORT
                 ).show();
 
@@ -266,12 +280,14 @@ public class AddEditActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Failed to add ingredient",
+                        "Failed to add ingredient...",
                         Toast.LENGTH_SHORT
                 ).show();
             }
 
         }
+
+
 
         // TheDatabase UPDATE.
         else {
@@ -289,7 +305,7 @@ public class AddEditActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient updated",
+                        "Ingredient updated!",
                         Toast.LENGTH_SHORT
                 ).show();
 
@@ -299,7 +315,7 @@ public class AddEditActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Failed to update ingredient",
+                        "Failed to update ingredient...",
                         Toast.LENGTH_SHORT
                 ).show();
             }

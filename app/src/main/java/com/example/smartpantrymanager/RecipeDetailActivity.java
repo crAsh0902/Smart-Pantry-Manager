@@ -4,12 +4,17 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class RecipeDetailsActivity extends AppCompatActivity {
+// TheDatabase.java
+// activity_recipe_detail.xmk
+
+
+
+// Recipe DISPLAY.
+public class RecipeDetailActivity extends AppCompatActivity {
 
     TextView txtRecipeName;
     TextView txtRecipeIngredients;
@@ -25,7 +30,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(
-                R.layout.activity_recipe_details
+                R.layout.activity_recipe_detail
         );
 
         txtRecipeName = findViewById(
@@ -37,13 +42,14 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         );
 
         txtRecipeInstructions = findViewById(
-                R.id.txtRecipeInstructions
+                R.id.txtRecipeInst
         );
 
         theDatabase = new TheDatabase(this);
 
 
 
+        // RecipeID.
         recipeId = getIntent().getLongExtra(
                 "RECIPE_ID",
                 -1
@@ -67,6 +73,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
 
 
+    // RecipeDetails LOADING.
     private void loadRecipe() {
 
         Cursor recipeCursor =
@@ -134,6 +141,9 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                                 )
                         );
 
+
+
+                // Recipe Ingredients' LAYOUT.
                 ingredients.append(
                         "▶ "
                 );
@@ -141,7 +151,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                 ingredients.append(name);
 
                 ingredients.append(
-                        " = "
+                        "   =   "
                 );
 
                 ingredients.append(quantity);

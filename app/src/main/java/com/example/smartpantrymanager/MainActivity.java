@@ -11,16 +11,22 @@ import java.util.ArrayList;
 
 
 
+// activity_main.xml
+// TheDatabase.java
+// PantryAdapter.java
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerPantry;
+
     ArrayList<Long> pantryIds;
     ArrayList<String> pantryNames;
     ArrayList<String> pantryQuantities;
+
     PantryAdapter pantryAdapter;
     TheDatabase theDatabase;
-
-
 
 
 
@@ -42,14 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         // THE 15 RECIPES.
         theDatabase.seedRecipes();
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-        android.util.Log.d(
-                "RECIPE_TEST",
-                "Recipe count: " +
-                        theDatabase.getRecipeCount()
-        );
 
 
         pantryIds = new ArrayList<>();
@@ -88,19 +91,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // TEST!!! RecipeDetails Screen.
-        findViewById(R.id.btnTestRecipe)
+        // SuggRecipes.
+        findViewById(R.id.btnSuggRecipes)
                 .setOnClickListener(v -> {
 
-                    Intent intent = new Intent(
-                            MainActivity.this,
-                            RecipeDetailsActivity.class
-                    );
-
-                    intent.putExtra(
-                            "RECIPE_ID",
-                            2L
-                    );
+                    Intent intent =
+                            new Intent(
+                                    MainActivity.this,
+                                    SuggRecipeActivity.class
+                            );
 
                     startActivity(intent);
                 });
@@ -192,13 +191,13 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Delete Ingredient")
                 .setMessage(
-                        "Are you sure you want to delete this ingredient?"
+                        "Delete this ingredient?"
                 )
                 .setPositiveButton(
                         "DELETE",
                         (dialog, which) -> {
 
-                            deleteIng(id);
+                            deleteIngredient(id);
 
                         }
                 )
@@ -209,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void deleteIng(long id) {
+    private void deleteIngredient(long id) {
 
         int result =
                 theDatabase.deletePantryItem(id);

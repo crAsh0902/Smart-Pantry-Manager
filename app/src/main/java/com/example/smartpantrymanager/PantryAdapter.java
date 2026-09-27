@@ -11,9 +11,14 @@ import java.util.ArrayList;
 
 
 
+// pantry_item.xml
+
+
+
 public class PantryAdapter
         extends RecyclerView.Adapter<PantryAdapter.PantryViewHolder> {
 
+    // PantryItem DISPLAY.
     private ArrayList<Long> pantryIds;
     private ArrayList<String> pantryNames;
     private ArrayList<String> pantryQuantities;
@@ -32,6 +37,7 @@ public class PantryAdapter
 
 
 
+    // CONST.
     public PantryAdapter(
             ArrayList<Long> pantryIds,
             ArrayList<String> pantryNames,
@@ -49,8 +55,7 @@ public class PantryAdapter
 
 
 
-
-
+    // PantryItem -> pantry_item.xml
     @NonNull
     @Override
     public PantryViewHolder onCreateViewHolder(
@@ -69,6 +74,7 @@ public class PantryAdapter
 
 
 
+    // Buttons EXECUTE.
     @Override
     public void onBindViewHolder(
             @NonNull PantryViewHolder holder,
@@ -99,6 +105,7 @@ public class PantryAdapter
 
 
 
+    // Row COUNT.
     @Override
     public int getItemCount() {
 
@@ -114,6 +121,8 @@ public class PantryAdapter
 
         Button btnEditIng;
         Button btnDeleteIng;
+
+
 
         public PantryViewHolder(
                 @NonNull View itemView) {

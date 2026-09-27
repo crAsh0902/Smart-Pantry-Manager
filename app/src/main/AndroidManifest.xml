@@ -26,7 +26,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".RecipeDetailsActivity"
+            android:name=".RecipeDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SuggRecipeActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

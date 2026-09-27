@@ -5,6 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.util.ArrayList;
+
+
+
+// ORIGIN.
 
 
 
@@ -12,37 +17,35 @@ public class TheDatabase extends SQLiteOpenHelper {
 
     // SmartPantry Database INFO.
     private static final String DATABASE_NAME = "ThePantry.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
 
 
-    // Pantry TABLE.
+    // PantryItem TABLE.
     public static final String TABLE_PANTRY = "PantryItem";
-    public static final String PANTRY_ID = "PantryID";
-    public static final String PANTRY_NAME = "name";
-    public static final String PANTRY_QUANTITY = "quantity";
-    public static final String PANTRY_UNIT = "unit";
-    public static final String PANTRY_EXPIRY_DATE = "exDate";
+    public static final String PANTRY_ID = "ID";
+    public static final String PANTRY_NAME = "Name";
+    public static final String PANTRY_QUANTITY = "Quantity";
+    public static final String PANTRY_UNIT = "Unit";
+    public static final String PANTRY_EXPIRY_DATE = "ExpirationDate";
 
 
 
     // Recipe TABLE.
     public static final String TABLE_RECIPE = "Recipe";
-    public static final String RECIPE_ID = "ID";
-    public static final String RECIPE_NAME = "name";
-    public static final String RECIPE_INSTRUCTIONS = "instructions";
+    public static final String RECIPE_ID = "RecipeID";
+    public static final String RECIPE_NAME = "Recipeame";
+    public static final String RECIPE_INSTRUCTIONS = "RecipeInstructions";
 
 
 
     // RecipeIngredient TABLE.
-    public static final String TABLE_RECIPE_INGREDIENT = "recipeIng";
-    public static final String RECIPE_INGREDIENT_ID = "ID";
-    public static final String RECIPE_INGREDIENT_RECIPE_ID = "recipeID";
-    public static final String RECIPE_INGREDIENT_NAME = "ingName";
-    public static final String RECIPE_INGREDIENT_QUANTITY = "reqQuantity";
-    public static final String RECIPE_INGREDIENT_UNIT = "unit";
-
-
+    public static final String TABLE_RECIPE_INGREDIENT = "RecipeIng";
+    public static final String RECIPE_INGREDIENT_ID = "RecipeIngID";
+    public static final String RECIPE_INGREDIENT_RECIPE_ID = "rirID";
+    public static final String RECIPE_INGREDIENT_NAME = "RecipeIngName";
+    public static final String RECIPE_INGREDIENT_QUANTITY = "RecipeIngQuantity";
+    public static final String RECIPE_INGREDIENT_UNIT = "RecipeUnit";
 
 
 
@@ -57,7 +60,7 @@ public class TheDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        // Pantry TABLE.
+        // PantryItem TABLE.
         String createPantryTable = "CREATE TABLE " + TABLE_PANTRY + " (" +
                 PANTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 PANTRY_NAME + " TEXT NOT NULL, " +
@@ -95,8 +98,6 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-
-
     // Database UPGRADE.
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -110,7 +111,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // PantryItem INSERTION.
+    // PantryItem INSERTION + SAVE.
     public long insertPantryItem(
             String name,
             double quantity,
@@ -135,7 +136,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // PantryItem READ.
+    // PantryItem RETRIEVAL Of ID.
     public Cursor retrievePantryItem() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -150,6 +151,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 PANTRY_ID + " ASC"
         );
     }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
@@ -204,7 +206,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // PantryItem ID RETRIEVAL.
+    // PantryItem by ID RETRIEVAL.
     public Cursor getPantryItemById(long id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -219,7 +221,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 null
         );
     }
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
@@ -312,8 +314,6 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-
-
     // Recipe DATABASE SEEDING.
     public void seedRecipes() {
 
@@ -338,13 +338,6 @@ public class TheDatabase extends SQLiteOpenHelper {
         seedBakedPotatoes();
         seedChileConQueso();
     }
-
-
-
-
-
-
-
 
 
 
@@ -378,7 +371,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Butter",
                 1,
-                "tablespoon"
+                "tbsp"
         );
     }
 
@@ -408,15 +401,15 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Salt",
-                3,
-                "shakes"
+                1,
+                "tsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Black Pepper",
-                3,
-                "shakes"
+                1,
+                "tsp"
         );
 
         insertRecipeIng(
@@ -430,7 +423,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Butter",
                 1,
-                "teaspoon"
+                "tsp"
         );
     }
 
@@ -457,14 +450,14 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
-                2.3,
-                "cup"
+                5,
+                "tbsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Onion",
-                1.2,
+                0.5,
                 "slice"
         );
 
@@ -479,7 +472,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Star Anise",
                 3,
-                "cloves"
+                "stars"
         );
 
         insertRecipeIng(
@@ -493,7 +486,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Ginger-garlic Paste",
                 2,
-                "teaspoons"
+                "tsp"
         );
 
         insertRecipeIng(
@@ -548,14 +541,14 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
-                2.3,
-                "cup"
+                5,
+                "tbsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Onion",
-                1.2,
+                0.5,
                 "slice"
         );
 
@@ -570,7 +563,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Star Anise",
                 3,
-                "cloves"
+                "stars"
         );
 
         insertRecipeIng(
@@ -584,7 +577,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Ginger-garlic Paste",
                 2,
-                "teaspoons"
+                "tsp"
         );
 
         insertRecipeIng(
@@ -637,7 +630,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                                 "4. In the meantime, slice tomatos and puree them.\n\n" +
                                 "5. Drain water, and set pasta aside.\n\n" +
                                 "6. With the same pot on low heat, pour sunflower oil until it covers the bottom.\n\n" +
-                                "7. Add onion, chilly, and ginger-garlic paste.\n\n" +
+                                "7. Add sliced onion, chillies, and ginger-garlic paste.\n\n" +
                                 "8. Cook until onions are soft to cut through with a pot spoon.\n\n" +
                                 "9. Add cut chicken, and chaat masala.\n\n" +
                                 "10. Cook for 5 minutes.\n\n" +
@@ -674,29 +667,29 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
-                2.3,
-                "cups"
+                5,
+                "tbsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Onion",
-                1.2,
-                "slices"
+                0.5,
+                "slice"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Chilly",
                 3,
-                "slices"
+                "whole"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Ginger-garlic Paste",
                 1,
-                "teaspoon"
+                "tsp"
         );
 
         insertRecipeIng(
@@ -768,7 +761,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Fresh Cream",
                 1,
-                "litre"
+                "l"
         );
 
         insertRecipeIng(
@@ -825,7 +818,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 insertRecipe(
                         "Roasted Tomato & Jalapeno Salsita",
                         "1. Preheat boiler.\n\n" +
-                                "2. Place tomatoes and chillies on baking sheet lined with aluminum foil.\n\n" +
+                                "2. Place sliced tomatoes and chillies on baking sheet lined with aluminum foil.\n\n" +
                                 "3. Place under boiler and roast for 15 minutes while flipping in between.\n\n" +
                                 "4. Season with salt.\n\n"
                 );
@@ -841,7 +834,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Chilly",
                 2,
-                "slices"
+                "whole"
         );
 
         insertRecipeIng(
@@ -872,7 +865,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Sunflower Oil",
                 1,
-                "teaspoon"
+                "tsp"
         );
 
         insertRecipeIng(
@@ -984,7 +977,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Onion",
                 2,
-                "tbsp"
+                "whole"
         );
 
         insertRecipeIng(
@@ -1148,8 +1141,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Onion",
-                1.2,
-                "cup"
+                0.5,
+                "slice"
         );
 
         insertRecipeIng(
@@ -1180,6 +1173,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 "g"
         );
     }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
@@ -1218,6 +1212,287 @@ public class TheDatabase extends SQLiteOpenHelper {
                 null,
                 null,
                 RECIPE_INGREDIENT_ID + " ASC"
+        );
+    }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+    // Ingredient NAME NORMALIZATION.
+    public String normalizeIngName(String name) {
+
+        String normalizedName =
+                name
+                        .trim()
+                        .toLowerCase();
+
+
+
+        if (normalizedName.equals("onions")) {
+
+            return "onion";
+        }
+
+        if (normalizedName.equals("cinnamon sticks")) {
+
+            return "cinnamon stick";
+        }
+
+        if (normalizedName.equals("star anises")) {
+
+            return "star anise";
+        }
+
+        if (normalizedName.equals("bay leaves")) {
+
+            return "bay leaf";
+        }
+
+        if (normalizedName.equals("potatoes")) {
+
+            return "potato";
+        }
+
+        if (normalizedName.equals("tomatoes")) {
+
+            return "tomato";
+        }
+
+        if (normalizedName.equals("chillies")) {
+
+            return "chilly";
+        }
+
+        if (normalizedName.equals("eggs")) {
+
+            return "egg";
+        }
+
+        return normalizedName;
+    }
+
+
+
+    // Pantry INGREDIENT MATCHING.
+    public boolean pantryHasEnoughIng(
+            String recipeIngName,
+            double reqQuantity,
+            String reqUnit) {
+
+        Cursor cursor =
+                retrievePantryItem();
+
+        String wantedIng =
+                normalizeIngName(
+                        recipeIngName
+                );
+
+
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                String pantryIngName =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        PANTRY_NAME
+                                )
+                        );
+
+                double pantryQuantity =
+                        cursor.getDouble(
+                                cursor.getColumnIndexOrThrow(
+                                        PANTRY_QUANTITY
+                                )
+                        );
+
+                String pantryUnit =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        PANTRY_UNIT
+                                )
+                        );
+
+
+
+                String pantryIng =
+                        normalizeIngName(
+                                pantryIngName
+                        );
+
+
+
+                if (pantryIng.equals(
+                        wantedIng
+                )) {
+
+                    if (pantryUnit.equalsIgnoreCase(
+                            reqUnit
+                    )) {
+
+                        if (pantryQuantity >=
+                                reqQuantity) {
+
+                            cursor.close();
+
+                            return true;
+                        }
+                    }
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        return false;
+    }
+
+
+
+    // Recipe STRICT MATCHING.
+    public boolean recipeCanCook(long recipeId) {
+
+        Cursor cursor =
+                getRecipeIng(
+                        recipeId
+                );
+
+        boolean recipeCanCook = true;
+
+
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                String ingName =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        RECIPE_INGREDIENT_NAME
+                                )
+                        );
+
+                double reqQuantity =
+                        cursor.getDouble(
+                                cursor.getColumnIndexOrThrow(
+                                        RECIPE_INGREDIENT_QUANTITY
+                                )
+                        );
+
+                String reqUnit =
+                        cursor.getString(
+                                cursor.getColumnIndexOrThrow(
+                                        RECIPE_INGREDIENT_UNIT
+                                )
+                        );
+
+
+
+                boolean ingAvailable =
+                        pantryHasEnoughIng(
+                                ingName,
+                                reqQuantity,
+                                reqUnit
+                        );
+
+
+
+                if (!ingAvailable) {
+
+                    recipeCanCook = false;
+
+                    break;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        return recipeCanCook;
+    }
+
+
+
+    // Recipe RETRIEVAL.
+    public Cursor retrieveRecipes() {
+
+        SQLiteDatabase db =
+                this.getReadableDatabase();
+
+        return db.query(
+                TABLE_RECIPE,
+                null,
+                null,
+                null,
+                null,
+                null,
+                RECIPE_ID + " ASC"
+        );
+    }
+
+
+
+    // RecipeSugg MATCHING.
+    public ArrayList<Long> getRecipeSugg() {
+
+        ArrayList<Long> matchingRecipeIds =
+                new ArrayList<>();
+
+        Cursor cursor =
+                retrieveRecipes();
+
+
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                long recipeId =
+                        cursor.getLong(
+                                cursor.getColumnIndexOrThrow(
+                                        RECIPE_ID
+                                )
+                        );
+
+                if (recipeCanCook(recipeId)) {
+
+                    matchingRecipeIds.add(
+                            recipeId
+                    );
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+
+        return matchingRecipeIds;
+    }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+    // ALL Recipes RETRIEVAL.
+    public Cursor retrieveAllRecipes() {
+
+        SQLiteDatabase db =
+                this.getReadableDatabase();
+
+        return db.query(
+                TABLE_RECIPE,
+                null,
+                null,
+                null,
+                null,
+                null,
+                RECIPE_ID + " ASC"
         );
     }
 }

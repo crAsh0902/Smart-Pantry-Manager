@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
+<!-- AddEditActivity.java -->
+
+
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -15,8 +21,9 @@
 
 
 
+        <!-- IngredientTitle -> Ingredient INFORMATION -->
         <TextView
-            android:id="@+id/txtAddIngTitle"
+            android:id="@+id/txtIngTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ADD YOUR INGREDIENT"
@@ -26,6 +33,7 @@
 
 
 
+        <!-- Name. -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,13 +41,16 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtIName"
+            android:id="@+id/edtIngName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e.g. Tomato"
             android:inputType="text"
             android:layout_marginBottom="16dp" />
 
+
+
+        <!-- Quantity. -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,13 +58,16 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtIQuantity"
+            android:id="@+id/edtIngQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e.g. 5"
             android:inputType="numberDecimal"
             android:layout_marginBottom="16dp" />
 
+
+
+        <!-- Unit. -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +75,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edtIUnit"
+            android:id="@+id/edtIngUnit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e.g. pieces"
@@ -70,16 +84,15 @@
 
 
 
+        <!-- ExpirationDate. -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ingredient's Expiry Date"
             android:textSize="16sp" />
 
-
-
         <EditText
-            android:id="@+id/edtIExpiryDate"
+            android:id="@+id/edtIngExpiryDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Optional - YYYY-MM-DD"
@@ -88,6 +101,7 @@
 
 
 
+        <!-- SAVE Ingredient. -->
         <Button
             android:id="@+id/btnSaveIng"
             android:layout_width="match_parent"
