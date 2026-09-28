@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-
-<!-- SuggRecipeActivity.java -->
-
-
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -27,32 +21,31 @@
 
     <!-- HEADER. -->
     <TextView
-        android:id="@+id/txtSuggRecipesTitle"
+        android:id="@+id/txtSettingsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SUGGESTED RECIPES"
+        android:text="SETTINGS"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="24dp" />
 
 
 
-    <!-- NO SuggestedRecipes MESSAGE. -->
+    <!-- ExpiryDate. -->
     <TextView
-        android:id="@+id/txtNoRecipes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No recipe matches your current Ingredients and or Quantity yet :( \n\nTry again when you have more Ingredients."
+        android:text="Ingredient EXPIRING SOON Alerts!"
         android:textSize="18sp"
-        android:visibility="gone"
-        android:paddingBottom="16dp" />
+        android:textStyle="bold" />
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerRecipes"
+    <!-- ExpiryDate SWITCH. -->
+    <Switch
+        android:id="@+id/switchExpiryAlerts"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:text="Notify me about ingredients that are expiring soon"
+        android:checked="true"
+        android:layout_marginBottom="24dp" />
 
 </LinearLayout>

@@ -103,7 +103,46 @@ public class MainActivity extends AppCompatActivity {
 
                     startActivity(intent);
                 });
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+        // NAVIGATION.
+        findViewById(R.id.btnNavPantry)
+                .setOnClickListener(v -> {
+                });
+
+
+
+        findViewById(R.id.btnNavRecipes)
+                .setOnClickListener(v -> {
+
+                    Intent intent =
+                            new Intent(
+                                    MainActivity.this,
+                                    SuggRecipeActivity.class
+                            );
+
+                    startActivity(intent);
+                });
+
+
+
+        findViewById(R.id.btnNavSettings)
+                .setOnClickListener(v -> {
+
+                    Intent intent =
+                            new Intent(
+                                    MainActivity.this,
+                                    SettingsActivity.class
+                            );
+
+                    startActivity(intent);
+                });
     }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 

@@ -16,6 +16,17 @@
 
 
 
+
+
+
+    <!-- NAVIGATION. -->
+    <include
+        layout="@layout/navi_bar" />
+
+
+
+
+
     <!-- HEADER. -->
     <TextView
         android:id="@+id/txtPantryTitle"
@@ -45,7 +56,7 @@
         android:layout_gravity="end"
         android:text="+"
         android:textSize="24sp" />
-<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 
 
 

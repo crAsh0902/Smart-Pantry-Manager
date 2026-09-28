@@ -44,7 +44,7 @@
             android:id="@+id/edtIngName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e.g. Tomato"
+            android:hint="Potato"
             android:inputType="text"
             android:layout_marginBottom="16dp" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/edtIngQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e.g. 5"
+            android:hint="5"
             android:inputType="numberDecimal"
             android:layout_marginBottom="16dp" />
 
@@ -78,7 +78,7 @@
             android:id="@+id/edtIngUnit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e.g. pieces"
+            android:hint="whole"
             android:inputType="text"
             android:layout_marginBottom="16dp" />
 
@@ -95,7 +95,7 @@
             android:id="@+id/edtIngExpiryDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Optional - YYYY-MM-DD"
+            android:hint="(Optional) YYYY-MM-DD"
             android:inputType="text"
             android:layout_marginBottom="24dp" />
 

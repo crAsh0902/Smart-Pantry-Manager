@@ -76,8 +76,46 @@ public class SuggRecipeActivity
         );
 
         loadSuggRecipes();
-    }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+
+
+
+
+        // NAVIGATION.
+        findViewById(R.id.btnNavPantry)
+                .setOnClickListener(v -> {
+
+                    Intent intent =
+                            new Intent(
+                                    SuggRecipeActivity.this,
+                                    com.example.smartpantrymanager.MainActivity.class
+                            );
+
+                    startActivity(intent);
+                });
+
+
+
+        findViewById(R.id.btnNavRecipes)
+                .setOnClickListener(v -> {
+                });
+
+
+
+        findViewById(R.id.btnNavSettings)
+                .setOnClickListener(v -> {
+
+                    Intent intent =
+                            new Intent(
+                                    SuggRecipeActivity.this,
+                                    SettingsActivity.class
+                            );
+
+                    startActivity(intent);
+                });
+    }
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
     private void loadSuggRecipes() {
@@ -164,7 +202,7 @@ public class SuggRecipeActivity
         Intent intent =
                 new Intent(
                         SuggRecipeActivity.this,
-                        RecipeDetailActivity.class
+                        com.example.smartpantrymanager.RecipeDetailActivity.class
                 );
 
         intent.putExtra(
