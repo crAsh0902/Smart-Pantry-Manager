@@ -346,7 +346,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Cheese Toast",
+                        "🧀 Cheese Toast",
                         "1. Butter one side of each bread.\n\n" +
                                 "2. Add shredded cheese on top of the plain side of 1 bread.\n\n" +
                                 "3. Sandwich cheese side with the plain side of the other bread.\n\n" +
@@ -382,7 +382,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Scrambled Eggs",
+                        "🍳 Scrambled Eggs",
                         "1. Crack eggs into a bowl, and mix.\n\n" +
                                 "2. Add salt and black pepper seasonings, a little milk, and mix.\n\n" +
                                 "3. Add butter into a low heat, frying pan.\n\n" +
@@ -434,7 +434,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Chicken Curry",
+                        "🍗 Chicken Curry",
                         "1. On low heat, pour sunflower oil until it covers the bottom of the pot.\n\n" +
                                 "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste.\n\n" +
                                 "3. Cook until onions are easy to cut through with a pot spoon.\n\n" +
@@ -525,7 +525,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Mutton Curry",
+                        "🍖 Mutton Curry",
                         "1. On low heat, pour sunflower oil until it covers the bottom of the pot.\n\n" +
                                 "2. Add onion slices, cinnamon sticks, star anise, bay leaves, and ginger-garlic paste.\n\n" +
                                 "3. Cook until onions are soft to cut through with a pot spoon.\n\n" +
@@ -623,7 +623,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Butter-Chicken Pasta",
+                        "🧈 Butter-Chicken Pasta",
                         "1. On medium heat, add pasta into a pot of boiling water.\n\n" +
                                 "2. Add salt and sunflower oil.\n\n" +
                                 "3. Cook pasta for 7 minutes.\n\n" +
@@ -728,7 +728,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Potato Bake",
+                        "🥔 Potato Bake",
                         "1. Preheat oven to 180 degrees Celsius.\n\n" +
                                 "2. Slice thin potatoes, and layer them in a dish.\n\n" +
                                 "3. Going layer-by-layer, sprinkle salt and black pepper seasonings.\n\n" +
@@ -779,7 +779,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "The Perfect Chips",
+                        "🍟 The Perfect Chips",
                         "1. Peel and cut potatoes into finger-sized chips.\n\n" +
                                 "2. On a high heat, medium pan, pour oil until 8cm deep.\n\n" +
                                 "3. Add potato chips in a metal sieve, and lower into pan.\n\n" +
@@ -816,7 +816,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Roasted Tomato & Jalapeno Salsita",
+                        "🍅 Roasted Tomato & Jalapeno Salsita",
                         "1. Preheat boiler.\n\n" +
                                 "2. Place sliced tomatoes and chillies on baking sheet lined with aluminum foil.\n\n" +
                                 "3. Place under boiler and roast for 15 minutes while flipping in between.\n\n" +
@@ -852,7 +852,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Roasted Chicken Skins",
+                        "🍗 Roasted Chicken Skins",
                         "1. Preheat oven to 450 degrees Celsius.\n\n" +
                                 "2. Line baking sheet with aluminum foil, and lightly oil it.\n\n" +
                                 "3. Pat dry the chicken skin, and lay it flat on foil.\n\n" +
@@ -897,7 +897,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Tomato Chips",
+                        "🍅 Tomato Chips",
                         "1. Slice tomato about 1 inch thick, and pat dry with paper towels.\n\n" +
                                 "2. Season with salt, and let it sit for 15 minutes.\n\n" +
                                 "3. Lay tomato slices flat on plate sprayed with cooking spray.\n\n" +
@@ -927,7 +927,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Microwave Potato Chips",
+                        "🍟 Microwave Potato Chips",
                         "1. Clean and slice potatoes paper thin.\n\n" +
                                 "2. Place potato slices on baking sheet, and season with salt.\n\n" +
                                 "3. Cover potato slices with another baking sheet.\n\n" +
@@ -957,7 +957,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Tomato Soup",
+                        "🍅 Tomato Soup",
                         "1. Blanch tomato before chopping into small pieces.\n\n" +
                                 "2. Add butter, chopped onions,and tomatoes into a pot filled with a little water.\n\n" +
                                 "3. Cook on medium heat till contents thicken.\n\n" +
@@ -1009,7 +1009,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Yukon Gold Mashed Potatoes",
+                        "🥔 Yukon Gold Mashed Potatoes",
                         "1. Peel and cut potatoes into 1 inch chunks.\n\n" +
                                 "2. Add potato chunks and salt into pot with cold water.\n\n" +
                                 "3. Boil, then simmer, and cook for 20 minutes.\n\n" +
@@ -1070,7 +1070,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Crock Pot Baked Potatoes",
+                        "🥔 Crock Pot Baked Potatoes",
                         "1. Prick potatoes with fork.\n\n" +
                                 "2. Wrap each potato in aluminium foil with a slice of onion, butter, salt, and black pepper.\n\n" +
                                 "3. Layer potatoes at the bottom of crock pot.\n\n" +
@@ -1123,7 +1123,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         long recipeId =
                 insertRecipe(
-                        "Chile Con Queso",
+                        "🧀 Chile Con Queso",
                         "1. Melt butter in skillet.\n\n" +
                                 "2. Add onions and cook till soft.\n\n" +
                                 "3. Add tomatoes, chillies, and salt into onion mixture.\n\n" +

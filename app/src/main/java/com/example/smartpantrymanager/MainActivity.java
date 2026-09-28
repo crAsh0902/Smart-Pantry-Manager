@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import android.widget.TextView;
 
 
 
@@ -26,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> pantryQuantities;
 
     PantryAdapter pantryAdapter;
+
     TheDatabase theDatabase;
 
+    TextView txtNoPantryItems;
 
 
     @Override
@@ -39,10 +42,27 @@ public class MainActivity extends AppCompatActivity {
         recyclerPantry = findViewById(
                 R.id.recyclerPantry
         );
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+        txtNoPantryItems =
+                findViewById(
+                        R.id.txtNoPantryItems
+                );
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
 
         recyclerPantry.setLayoutManager(
                 new LinearLayoutManager(this)
         );
+
+
 
         theDatabase = new TheDatabase(this);
 
@@ -208,7 +228,35 @@ public class MainActivity extends AppCompatActivity {
         cursor.close();
 
         pantryAdapter.notifyDataSetChanged();
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+        if (pantryNames.isEmpty()) {
+
+            txtNoPantryItems.setVisibility(
+                    TextView.VISIBLE
+            );
+
+            recyclerPantry.setVisibility(
+                    RecyclerView.GONE
+            );
+
+        } else {
+
+            txtNoPantryItems.setVisibility(
+                    TextView.GONE
+            );
+
+            recyclerPantry.setVisibility(
+                    RecyclerView.VISIBLE
+            );
+        }
     }
+
+
 
     private void openEditScreen(long id) {
 

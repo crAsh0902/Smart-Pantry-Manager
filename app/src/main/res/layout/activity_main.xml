@@ -36,6 +36,23 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:paddingBottom="16dp" />
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+
+    <TextView
+        android:id="@+id/txtNoPantryItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your pantry is empty :( \n\n Let's add an ingredient to get started!"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:paddingBottom="16dp" />
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
 
 
 
