@@ -20,7 +20,7 @@
         android:id="@+id/txtIngName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tomatoes"
+        android:text="Potatoes"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
         android:id="@+id/txtIngQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5 pieces"
+        android:text="5 whole"
         android:textSize="16sp" />
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
 

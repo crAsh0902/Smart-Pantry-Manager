@@ -370,8 +370,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Butter",
-                1,
-                "tbsp"
+                2,
+                "tsp"
         );
     }
 
@@ -506,13 +506,13 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Salt",
-                30,
-                "g"
+                6,
+                "tsp"
         );
 
         insertRecipeIng(
                 recipeId,
-                "Potatoes",
+                "Potato",
                 2,
                 "whole"
         );
@@ -582,7 +582,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         insertRecipeIng(
                 recipeId,
-                "Tomatoes",
+                "Tomato",
                 2,
                 "whole"
         );
@@ -596,7 +596,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         insertRecipeIng(
                 recipeId,
-                "Cut Mutton",
+                "Mutton",
                 8,
                 "pieces"
         );
@@ -604,13 +604,13 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Salt",
-                30,
-                "g"
+                6,
+                "tsp"
         );
 
         insertRecipeIng(
                 recipeId,
-                "Potatoes",
+                "Potato",
                 2,
                 "whole"
         );
@@ -627,7 +627,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                         "1. On medium heat, add pasta into a pot of boiling water.\n\n" +
                                 "2. Add salt and sunflower oil.\n\n" +
                                 "3. Cook pasta for 7 minutes.\n\n" +
-                                "4. In the meantime, slice tomatos and puree them.\n\n" +
+                                "4. In the meantime, slice tomatoes and puree them.\n\n" +
                                 "5. Drain water, and set pasta aside.\n\n" +
                                 "6. With the same pot on low heat, pour sunflower oil until it covers the bottom.\n\n" +
                                 "7. Add sliced onion, chillies, and ginger-garlic paste.\n\n" +
@@ -653,8 +653,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Salt",
-                30,
-                "g"
+                8,
+                "tsp"
         );
 
         insertRecipeIng(
@@ -694,9 +694,9 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         insertRecipeIng(
                 recipeId,
-                "Cut Chicken",
-                250,
-                "g"
+                "Chicken",
+                3,
+                "pieces"
         );
 
         insertRecipeIng(
@@ -704,13 +704,6 @@ public class TheDatabase extends SQLiteOpenHelper {
                 "Chaat Masala",
                 1,
                 "pot spoon"
-        );
-
-        insertRecipeIng(
-                recipeId,
-                "Salt",
-                30,
-                "g"
         );
 
         insertRecipeIng(
@@ -746,8 +739,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Salt",
-                500,
-                "ml"
+                2,
+                "tsp"
         );
 
         insertRecipeIng(
@@ -759,9 +752,9 @@ public class TheDatabase extends SQLiteOpenHelper {
 
         insertRecipeIng(
                 recipeId,
-                "Fresh Cream",
+                "Cream",
                 1,
-                "l"
+                "cup"
         );
 
         insertRecipeIng(
@@ -774,12 +767,12 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // RECIPE 7: Potato Chips.
+    // RECIPE 7: Perfect Chips.
     private void seedPerfectChips() {
 
         long recipeId =
                 insertRecipe(
-                        "🍟 The Perfect Chips",
+                        "🍟 Perfect Chips",
                         "1. Peel and cut potatoes into finger-sized chips.\n\n" +
                                 "2. On a high heat, medium pan, pour oil until 8cm deep.\n\n" +
                                 "3. Add potato chips in a metal sieve, and lower into pan.\n\n" +
@@ -790,15 +783,15 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Sunflower Oil",
-                500,
-                "ml"
+                33,
+                "tbsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Potato",
-                800,
-                "g"
+                5,
+                "whole"
         );
 
         insertRecipeIng(
@@ -865,7 +858,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Sunflower Oil",
                 1,
-                "tsp"
+                "tbsp"
         );
 
         insertRecipeIng(
@@ -892,12 +885,12 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // RECIPE 10: Tomato Chips.
+    // RECIPE 10: Homemade Tomato Chips.
     private void seedTomatoChips() {
 
         long recipeId =
                 insertRecipe(
-                        "🍅 Tomato Chips",
+                        "🍅 Homemade Tomato Chips",
                         "1. Slice tomato about 1 inch thick, and pat dry with paper towels.\n\n" +
                                 "2. Season with salt, and let it sit for 15 minutes.\n\n" +
                                 "3. Lay tomato slices flat on plate sprayed with cooking spray.\n\n" +
@@ -922,12 +915,12 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // RECIPE 11: Microwave Potato Chips.
+    // RECIPE 11: Homemade Potato Chips.
     private void seedMicrowavePotatoChips() {
 
         long recipeId =
                 insertRecipe(
-                        "🍟 Microwave Potato Chips",
+                        "🍟 Homemade Potato Chips",
                         "1. Clean and slice potatoes paper thin.\n\n" +
                                 "2. Place potato slices on baking sheet, and season with salt.\n\n" +
                                 "3. Cover potato slices with another baking sheet.\n\n" +
@@ -1004,12 +997,12 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // RECIPE 13: Yukon Gold Mashed Potatoes.
+    // RECIPE 13: Mashed Potatoes.
     private void seedMashedPotatoes() {
 
         long recipeId =
                 insertRecipe(
-                        "🥔 Yukon Gold Mashed Potatoes",
+                        "🥔 Mashed Potatoes",
                         "1. Peel and cut potatoes into 1 inch chunks.\n\n" +
                                 "2. Add potato chunks and salt into pot with cold water.\n\n" +
                                 "3. Boil, then simmer, and cook for 20 minutes.\n\n" +
@@ -1023,29 +1016,22 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Potato",
-                900,
-                "g"
+                3,
+                "whole"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Butter",
-                113,
-                "g"
+                24,
+                "tsp"
         );
 
         insertRecipeIng(
                 recipeId,
                 "Cream",
-                120,
-                "ml"
-        );
-
-        insertRecipeIng(
-                recipeId,
-                "Salt",
                 1,
-                "tsp"
+                "cup"
         );
 
         insertRecipeIng(
@@ -1065,12 +1051,12 @@ public class TheDatabase extends SQLiteOpenHelper {
 
 
 
-    // Recipe 14: Crock Pot Baked Potatoes.
+    // Recipe 14: Crock-pot Baked Potatoes.
     private void seedBakedPotatoes() {
 
         long recipeId =
                 insertRecipe(
-                        "🥔 Crock Pot Baked Potatoes",
+                        "🥔 Crock-pot Baked Potatoes",
                         "1. Prick potatoes with fork.\n\n" +
                                 "2. Wrap each potato in aluminium foil with a slice of onion, butter, salt, and black pepper.\n\n" +
                                 "3. Layer potatoes at the bottom of crock pot.\n\n" +
@@ -1097,8 +1083,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Butter",
-                5,
-                "tbsp"
+                10,
+                "tsp"
         );
 
         insertRecipeIng(
@@ -1134,8 +1120,8 @@ public class TheDatabase extends SQLiteOpenHelper {
         insertRecipeIng(
                 recipeId,
                 "Butter",
-                1,
-                "tbsp"
+                2,
+                "tsp"
         );
 
         insertRecipeIng(
