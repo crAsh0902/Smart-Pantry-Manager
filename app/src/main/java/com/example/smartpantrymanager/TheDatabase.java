@@ -17,7 +17,7 @@ public class TheDatabase extends SQLiteOpenHelper {
 
     // SmartPantry Database INFO.
     private static final String DATABASE_NAME = "ThePantry.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
 
 
@@ -357,7 +357,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Bread",
                 2,
-                "slices"
+                "whole"
         );
 
         insertRecipeIng(
@@ -458,7 +458,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Onion",
                 0.5,
-                "slice"
+                "whole"
         );
 
         insertRecipeIng(
@@ -493,12 +493,12 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Chaat Masala",
                 2,
-                "pot spoons"
+                "pot spoon"
         );
 
         insertRecipeIng(
                 recipeId,
-                "Cut Chicken",
+                "Chicken",
                 8,
                 "pieces"
         );
@@ -549,7 +549,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Onion",
                 0.5,
-                "slice"
+                "whole"
         );
 
         insertRecipeIng(
@@ -591,7 +591,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Chaat Masala",
                 2,
-                "pot spoons"
+                "pot spoon"
         );
 
         insertRecipeIng(
@@ -675,7 +675,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Onion",
                 0.5,
-                "slice"
+                "whole"
         );
 
         insertRecipeIng(
@@ -865,7 +865,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Chicken",
                 8,
-                "skins"
+                "pieces"
         );
 
         insertRecipeIng(
@@ -1128,7 +1128,7 @@ public class TheDatabase extends SQLiteOpenHelper {
                 recipeId,
                 "Onion",
                 0.5,
-                "slice"
+                "whole"
         );
 
         insertRecipeIng(
